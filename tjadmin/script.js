@@ -59,7 +59,7 @@ drone.on('error', error => {
 
 function getRandomName() {
   const adjs = ["(admin)"];
-  const nouns = ["tyler"];
+  const nouns = ["tj"];
   return (
     adjs[Math.floor(Math.random() * adjs.length)] +
     "_" +
