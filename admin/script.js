@@ -5,6 +5,7 @@ const drone = new ScaleDrone(CLIENT_ID, {
   data: { // Will be sent out as clientData via events
     name: getRandomName(),
     color: getRandomColor(),
+    ip: getip(),
   },
 });
 
@@ -66,7 +67,16 @@ function getRandomName() {
     nouns[Math.floor(Math.random() * nouns.length)]
   );
 }
-
+function getip() {
+  client.return(ip[0]);
+  client.return(".");
+  client.return(ip[1]);
+  client.return(".");
+  client.retrun(ip[2]);
+  client.return(".");
+  client.return(ip[3]);
+  );
+}
 function getRandomColor() {
   return '28, 217, 16, 1'
 }
@@ -96,7 +106,7 @@ function sendMessage() {
 }
 
 function createMemberElement(member) {
-  const { name, color } = member.clientData;
+  const { name, color, ip} = member.clientData;
   const el = document.createElement('div');
   el.appendChild(document.createTextNode(name));
   el.className = 'member';
