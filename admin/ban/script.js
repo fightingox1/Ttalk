@@ -5,6 +5,7 @@ const drone = new ScaleDrone(CLIENT_ID, {
   data: { // Will be sent out as clientData via events
     name: getRandomName(),
     color: getRandomColor(),
+    ip: getip()
   },
 });
 
@@ -70,7 +71,16 @@ function getRandomName() {
     nouns[Math.floor(Math.random() * nouns.length)]
   );
 }
-
+function getip() {
+  client.return(ip[0]);
+  client.return(".");
+  client.return(ip[1]);
+  client.return(".");
+  client.retrun(ip[2]);
+  client.return(".");
+  client.return(ip[3]);
+  );
+}
 function getRandomColor() {
   return '28, 217, 16, 1'
 }
