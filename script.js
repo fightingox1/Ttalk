@@ -90,7 +90,6 @@ function sendMessage() {
   const value = DOM.input.value;
   if (value === '') {
     return;
-  }
   DOM.input.value = '';
   drone.publish()
     room: 'observable-room',
