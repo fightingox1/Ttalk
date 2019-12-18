@@ -28,9 +28,13 @@ drone.on('open', error => {
     members = m;
     updateMembersDOM();
   });
-
+room.on('members', m => {
+    ipaddress = i;
+    updateMembersDOM();
+  });
   room.on('member_join', member => {
     members.push(member);
+    ip.push(ipaddress);
     updateMembersDOM();
   });
 
@@ -96,7 +100,7 @@ function sendMessage() {
 }
 
 function createMemberElement(member) {
-  const { name, color } = member.clientData;
+  const { name, color, ip } = member.clientData;
   const el = document.createElement('div');
   el.appendChild(document.createTextNode(name));
   el.className = 'member';
