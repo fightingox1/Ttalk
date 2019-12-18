@@ -91,7 +91,8 @@ function sendMessage() {
   DOM.input.value = '';
   drone.publish()
     room: 'observable-room',
-    message
+    message: value,
+  });
 }
 
 function createMemberElement(member) {
