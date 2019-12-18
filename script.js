@@ -92,7 +92,7 @@ function sendMessage() {
     return;
   }
   DOM.input.value = '';
-  drone.publish({
+  drone.publish()
     room: 'observable-room',
     message: value,
   });
@@ -121,6 +121,7 @@ function createMessageElement(text, member) {
   el.appendChild(document.createTextNode(text));
   el.className = 'message';
   return el;
+  }
 }
 
 function addMessageToListDOM(text, member) {
@@ -129,5 +130,4 @@ function addMessageToListDOM(text, member) {
   el.appendChild(createMessageElement(text, member));
   if (wasTop) {
     el.scrollTop = el.scrollHeight - el.clientHeight;
-  }
 }
