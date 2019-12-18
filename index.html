@@ -46,7 +46,16 @@
       padding: 10px 15px;
       font-size: 16px;
     }
+      .name {
+      flex-grow: 1;
+      border: 1px solid #dfdfdf;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
     .message-form__button {
+      margin: 10px;
+    }
+    .namebutton {
       margin: 10px;
     }
   </style>
@@ -58,6 +67,10 @@
   <form class="message-form" onsubmit="return false;">
     <input class="message-form__input" placeholder="Type a message.." type="text">
     <input class="message-form__button" value="Send" type="submit">
+  </form>
+  <form class="nameselector" onsubmit="return false;">
+    <input class="name" placeholder="" type="text">
+    <input class="namebutton" value="Send" type="submit">
   </form>
   <script src="./script.js"></script>
 
